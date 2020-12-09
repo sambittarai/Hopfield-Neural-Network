@@ -26,7 +26,7 @@ def calc_weight(epsilon):
 
 def main():
 	#path_ball = "/content/drive/MyDrive/Computational Neuroscience/ball.txt"
-	path_ball = input("Enter the path of the text file of the image")
+	path_ball = input("Enter the path of the text file of the image: ")
 	ball_arr = convert_txt_to_array(path_ball, np.zeros((90, 100)))
 
 	mask_image = np.zeros((90, 100))
