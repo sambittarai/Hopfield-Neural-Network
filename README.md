@@ -3,4 +3,6 @@ This repository contains the implementation of Hopfield Network and using the ne
 
 
 Images/Part_1
-![](Images/Part_1/Cat.png) 
+
+![](Images/Part_1/Ball.png)  ![](Images/Part_1/Cat.png)
+  
