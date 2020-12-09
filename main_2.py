@@ -30,9 +30,9 @@ def main():
 	ball_arr = convert_txt_to_array(path_ball, np.zeros((90, 100)))
 
 	mask_image = np.zeros((90, 100))
-	mask_image[:35,20:55] = ball_arr[:35,20:55]
+	mask_image[:35,20:55] = ball_arr[:35,20:55] #small patch of input
 	N = ball_arr.shape[0]*ball_arr.shape[1] #No. of neurons
-	NO_OF_ITERATIONS = 8
+	NO_OF_ITERATIONS = 9
 	epsilon1 = ball_arr.reshape(1, N)
 	test_array = mask_image.reshape(1, N)
 
