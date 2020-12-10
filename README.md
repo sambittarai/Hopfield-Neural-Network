@@ -26,6 +26,8 @@ Image of the ball is saved in the network.
 
 **[b] Plot the Root Mean Squared (RMS) error with time.**
 
+RMS = array([1.26719287, 0.76768049, 0.47702784, 0.2921187 , 0.17888544, 0.11352924, 0.06324555, 0.03651484, 0.00020021])
+
 ![](Images/Part_2/RMS_plot.png)
 
 
