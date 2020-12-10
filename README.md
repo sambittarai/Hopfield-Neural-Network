@@ -8,7 +8,7 @@ This repository contains the implementation of Hopfield Network using Hebbian Le
 
 **Image Retrieval**
 
-<img src="https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/ball_weight_25%25.gif" width="400" height="400"> <img src="https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/cat_weight_25%25.gif" width="400" height="400"> <img src="https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/mona_weight_25%25.gif" width="400" height="400">
+<img src="https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/ball_weight_25%25.gif" width="200" height="200"> <img src="https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/cat_weight_25%25.gif" width="200" height="200"> <img src="https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/mona_weight_25%25.gif" width="200" height="200">
 
 ## Task 1
 
