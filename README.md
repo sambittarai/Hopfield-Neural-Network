@@ -31,5 +31,8 @@ RMS = array([1.26719287, 0.76768049, 0.47702784, 0.2921187 , 0.17888544, 0.11352
 ![](Images/Part_2/RMS_plot.png)
 
 ## Task 3
+Save all the three images (Ball, Cat, Monalisa) in the network.
+
+**[a] Give small patches of each image to retrieve the corresponding saved image.**
 
   
