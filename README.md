@@ -21,7 +21,7 @@ Image of the ball is saved in the network.
 
 **Image Retrieval**
 
-![](Images/Part_1/Iteration_1.png) ![](Images/Part_1/Iteration_2.png) ![](Images/Part_1/Iteration_3.png) ![](Images/Part_1/Iteration_4.png) ![](Images/Part_1/Iteration_5.png)
+![](Images/Part_2/Iteration_1.png) ![](Images/Part_2/Iteration_2.png) ![](Images/Part_2/Iteration_3.png) ![](Images/Part_2/Iteration_4.png) ![](Images/Part_2/Iteration_5.png)
 
 
   
