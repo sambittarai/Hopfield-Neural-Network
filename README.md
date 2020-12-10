@@ -13,5 +13,9 @@ This repository contains the implementation of Hopfield Network using Hebbian Le
 ![](Images/Part_1/Ball.png)  ![](Images/Part_1/Cat.png)  ![](Images/Part_1/Mona.png)
 
 ## Task 2
-Image of the ball is saved in the network. And 
+Image of the ball is saved in the network.
+
+**[a] Initialize a zero matrix of the same size as that of the input image of the ball and replace a small patch with a portion of the input image. Use this patch image as the cue for retrieving the image.**
+
+![](Images/Part_1/Ball_patch.png)
   
