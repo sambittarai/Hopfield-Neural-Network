@@ -17,8 +17,9 @@ Image of the ball is saved in the network.
 
 **[a] Initialize a zero matrix of the same size as that of the input image of the ball and replace a small patch with a portion of the input image. Use this patch image as the cue for retrieving the image.**
 
-![](Images/Part_1/Ball_patch.png)
 Patch given as input
+![](Images/Part_1/Ball_patch.png)
+
 
 **Image Retrieval**
 
