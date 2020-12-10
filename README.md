@@ -12,6 +12,10 @@ This repository contains the implementation of Hopfield Network using Hebbian Le
 
 ![](Images/Part_1/Ball.png)  ![](Images/Part_1/Cat.png)  ![](Images/Part_1/Mona.png)
 
+**Image Retrieval**
+
+![](Images/Part_3/ball_weight_25%.gif)  ![](Images/Part_3/cat_weight_25%.gif)  ![](Images/Part_3/ball_weight_25%.gif)
+
 ## Task 2
 Image of the ball is saved in the network.
 
