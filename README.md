@@ -1,5 +1,5 @@
 # Hopfield-Neural-Network
-This repository contains the implementation of Hopfield Network and using the network as auto-associative memory for Image retrieval.
+This repository contains the implementation of Hopfield Network using Hebbian Learning algorithm. The network is used as auto-associative memory for Image retrieval.
 
 ## Task 1
 
