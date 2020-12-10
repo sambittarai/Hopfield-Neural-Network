@@ -35,4 +35,6 @@ Save all the three images (Ball, Cat, Monalisa) in the network.
 
 **[a] Give small patches of each image to retrieve the corresponding saved image.**
 
+![](Images/Part_1/Cat_patch.png) ![](Images/Part_1/Mona_patch.png)
+
   
