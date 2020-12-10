@@ -1,20 +1,20 @@
 # Hopfield-Neural-Network
 This repository contains the implementation of Hopfield Network using Hebbian Learning algorithm. The network is used as auto-associative memory for Image retrieval.
 
-## Implemented Things
+## Things to be implemented
 * Single Pattern Image retrieval.
 * Multiple Pattern Image retrieval.
 * Multiple Pattern Image retrieval by making X % of the weight 0.
+
+**Image Retrieval**
+
+![](https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/ball_weight_25%25.gif)  ![](https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/cat_weight_25%25.gif)  ![](https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/mona_weight_25%25.gif)
 
 ## Task 1
 
 **Image Visualization**
 
 ![](Images/Part_1/Ball.png)  ![](Images/Part_1/Cat.png)  ![](Images/Part_1/Mona.png)
-
-**Image Retrieval**
-
-![](https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/ball_weight_25%25.gif)  ![](https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/cat_weight_25%25.gif)  ![](https://github.com/sambittarai/Hopfield-Neural-Network/blob/main/Images/Part_3/mona_weight_25%25.gif)
 
 ## Task 2
 Image of the ball is saved in the network.
