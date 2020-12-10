@@ -8,5 +8,7 @@ This repository contains the implementation of Hopfield Network using Hebbian Le
 
 ## Task 1
 
+**Image Visualization**
+
 ![](Images/Part_1/Ball.png)  ![](Images/Part_1/Cat.png)  ![](Images/Part_1/Mona.png)
   
