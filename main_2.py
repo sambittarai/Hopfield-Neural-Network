@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 def convert_txt_to_array(path, arr):
 	'''
 	path - path of the text file
-	arr - matrix with appropriate shape as that of the text file
+	arr - zero array with appropriate shape as that of the text file
 
 	returns a numpy array with the given pixel values in the text file
 	'''
@@ -19,6 +19,11 @@ def convert_txt_to_array(path, arr):
 	return arr
 
 def calc_weight(epsilon):
+	'''
+	epsilon - The vector pattern, which is used to calculate the weight matrix
+
+	returns the weight matrix
+	'''
 	W = np.outer(epsilon, epsilon)
 	np.fill_diagonal(W, 0)
 	W = W / W.shape[0]
