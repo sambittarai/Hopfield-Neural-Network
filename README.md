@@ -24,7 +24,7 @@ Image of the ball is saved in the network.
 ![](Images/Part_1/Ball_patch.png)
 
 
-**Image Retrieval**
+**Image Retrieval of ball patch**
 
 ![](Images/Part_2/Iteration_1.png) ![](Images/Part_2/Iteration_2.png) ![](Images/Part_2/Iteration_3.png) ![](Images/Part_2/Iteration_4.png) ![](Images/Part_2/Iteration_5.png) ![](Images/Part_2/Iteration_6.png) ![](Images/Part_2/Iteration_7.png) ![](Images/Part_2/Iteration_8.png) ![](Images/Part_1/Ball.png)
 
@@ -41,4 +41,5 @@ Save all the three images (Ball, Cat, Monalisa) in the network.
 
 ![](Images/Part_1/Cat_patch.png) ![](Images/Part_1/Mona_patch.png)
 
-  
+  **Image Retrieval of cat patch**
+
