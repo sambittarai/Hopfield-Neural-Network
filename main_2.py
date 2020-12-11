@@ -29,7 +29,7 @@ def calc_weight(epsilon):
 	W = W / W.shape[0]
 	return W
 
-def main():
+def main(NO_OF_ITERATIONS = 9):
 	#path_ball = "/content/drive/MyDrive/Computational Neuroscience/ball.txt"
 	path_ball = input("Enter the path of the text file of the image: ")
 	ball_arr = convert_txt_to_array(path_ball, np.zeros((90, 100)))
@@ -37,7 +37,7 @@ def main():
 	mask_image = np.zeros((90, 100))
 	mask_image[:35,20:55] = ball_arr[:35,20:55] #small patch of input
 	N = ball_arr.shape[0]*ball_arr.shape[1] #No. of neurons
-	NO_OF_ITERATIONS = 9
+	NO_OF_ITERATIONS = NO_OF_ITERATIONS
 	epsilon1 = ball_arr.reshape(1, N)
 	test_array = mask_image.reshape(1, N)
 
@@ -64,4 +64,4 @@ def main():
 	plt.show()
 
 
-main()
+main(NO_OF_ITERATIONS = 9)
