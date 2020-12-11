@@ -22,62 +22,79 @@ def convert_txt_to_array(path, arr):
 
 	return arr
 
-path_ball = "/content/drive/MyDrive/Computational Neuroscience/ball.txt"
-path_cat = "/content/drive/MyDrive/Computational Neuroscience/cat.txt"
-path_mona = "/content/drive/MyDrive/Computational Neuroscience/mona.txt"
+def calc_weight(epsilon, percentage = '0'):
+	'''
+	epsilon - The vector patterns, which are used to calculate the weight matrix
+	percentage - percentage of weights to be assigned to 0
 
-ball_arr = convert_txt_to_array(path_ball, np.zeros((90, 100)))
-cat_arr = convert_txt_to_array(path_cat, np.zeros((90, 100)))
-cat_arr = np.where(cat_arr < 0, -1, 1).astype('float')
-mona_arr = convert_txt_to_array(path_mona, np.zeros((90, 100)))
+	returns the weight matrix
+	'''
+	W = np.zeros((epsilon.shape[1], epsilon.shape[1]))
+	for i in range(epsilon.shape[0]):
+		W_temp = np.outer(epsilon[i], epsilon[i])
+		np.fill_diagonal(W_temp, 0)
+		W += W_temp
 
-N = ball_arr.shape[0]*ball_arr.shape[1]
-P = 3
-NO_OF_ITERATIONS = 9
-NO_OF_BITS_TO_CHANGE = 9000
+	W = W / W.shape[0]
+	X = np.ones((epsilon.shape[1], epsilon.shape[1]))
+	if percentage == '25':
+		X[:4500, :4500] = 0
+	elif percentage == '50':
+		X[:, :4500] = 0
+	elif percentage == '80':
+		X[:, :7200] = 0
 
-epsilon = np.asarray([ball_arr, cat_arr, mona_arr])
-random_pattern = np.random.randint(P)
-arr = epsilon[random_pattern]
-mask_image = np.zeros((90, 100))
-mask_image[:45,20:65] = arr[:45,20:65]
-test_array = mask_image
-test_array = test_array.reshape(1, N)
-epsilon = epsilon.reshape(3, N)
+	np.fill_diagonal(X, 0)
+	W = np.multiply(W, X) #element wise multiplication
 
-# plt.imshow(test_array.reshape(90, 100), cmap='gray')
-# plt.show()
-# plt.imshow(arr, cmap='gray')
-# plt.show()
+	return W
 
-W = np.zeros((N,N))
-for i in range(3):
-  W_temp = np.outer(epsilon[i], epsilon[i])
-  np.fill_diagonal(W_temp, 0)
-  W += W_temp
+def main():
+	# path_ball = "/content/drive/MyDrive/Computational Neuroscience/ball.txt"
+	path_ball = input("Enter the path of the text file of the ball image: ")
+	# path_cat = "/content/drive/MyDrive/Computational Neuroscience/cat.txt"
+	path_cat = input("Enter the path of the text file of the cat image: ")
+	# path_mona = "/content/drive/MyDrive/Computational Neuroscience/mona.txt"
+	path_mona = input("Enter the path of the text file of the mona image: ")
 
-W = W / N
+	ball_arr = convert_txt_to_array(path_ball, np.zeros((90, 100)))
+	cat_arr = convert_txt_to_array(path_cat, np.zeros((90, 100)))
+	cat_arr = np.where(cat_arr < 0, -1, 1).astype('float')
+	mona_arr = convert_txt_to_array(path_mona, np.zeros((90, 100)))
 
-X = np.ones((9000, 9000))
-X[:4500,:4500] = 0
-np.fill_diagonal(X, 0)
+	N = ball_arr.shape[0]*ball_arr.shape[1] # No. of neurons
+	P = 3 #Total number of patterns to be learnt
+	NO_OF_ITERATIONS = 12
+	epsilon = np.asarray([ball_arr, cat_arr, mona_arr])
+	random_pattern = np.random.randint(P)
+	arr = epsilon[random_pattern]
+	mask_image = np.zeros((90, 100))
+	mask_image[:45, 20:65] = arr[:45, 20:65]
+	test_array = mask_image
+	test_array = test_array.reshape(1, N)
+	epsilon = epsilon.reshape(P, N)
 
-W = np.multiply(W, X)
+	W = calc_weight(epsilon, percentage = '0')
+	h = np.zeros((N))
+	rms = np.zeros((NO_OF_ITERATIONS))
+	img = []
+	img.append(test_array.reshape(90, 100))
 
-h = np.zeros((N))
-rms = np.zeros((NO_OF_ITERATIONS))
-img = []
+	for iteration in tqdm(range(NO_OF_ITERATIONS)):
+		for i in range(N):
+			i = np.random.randint(N)
+			h[i] = 0
+			for j in range(N):
+				h[i] += W[i, j]*test_array[0, j]
+		test_array = (np.where(h<0, -1, 1)).reshape(1, N)
+		rms[iteration] = mean_squared_error(test_array, mona_arr.reshape(1, N), squared=False)
+		img.append(test_array.reshape(90, 100))
+		plt.imshow(np.where(test_array.reshape(90, 100)<0, -1, 1), cmap="gray")
+		plt.show()
 
-for iteration in tqdm(range(NO_OF_ITERATIONS)):
-	  for i in range(N):
-	      i = np.random.randint(N)
-	      h[i] = 0
-	      for j in range(N):
-	          h[i] += W[i, j]*test_array[0,j]
-	  test_array = (np.where(h<0, -1, 1)).reshape(1, N)
-	  rms[iteration] = mean_squared_error(test_array, ball_arr.reshape(1, N), squared=False)
-	  #rms[iteration] = mean_squared_error(test_array, cat_arr.reshape(1, N), squared=False)
-	  #rms[iteration] = mean_squared_error(test_array, mona_arr.reshape(1, N), squared=False)
-	  img.append(test_array.reshape(90,100))
-	  plt.imshow(np.where(test_array.reshape(90,100)<0, -1, 1), cmap='gray')
-	  plt.show()
+	#Plot the rms error
+	plt.plot(np.arange(NO_OF_ITERATIONS), rms)
+	plt.xlabel('Time')
+	plt.ylabel('RMS error')
+	plt.show()
+
