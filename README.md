@@ -41,10 +41,18 @@ Save all the three images (Ball, Cat, Monalisa) in the network.
 
 ![](Images/Part_1/Cat_patch.png) ![](Images/Part_1/Mona_patch.png)
 
-  **Image Retrieval of cat patch**
+ **Image Retrieval of cat patch**
 
 ![](Images/Part_3/Cat_Iter_1.png) ![](Images/Part_3/Cat_Iter_2.png) ![](Images/Part_3/Cat_Iter_3.png) ![](Images/Part_3/Cat_Iter_4.png) ![](Images/Part_3/Cat_Iter_5.png) ![](Images/Part_3/Cat_Iter_6.png) ![](Images/Part_3/Cat_Iter_7.png) ![](Images/Part_3/Cat_Iter_8.png) ![](Images/Part_1/Cat.png)
 
 **RMS error vs time over the iterations**
 
 ![](Images/Part_3/RMS_cat.png)
+
+ **Image Retrieval of Monalisa patch**
+
+![](Images/Part_3/Mona_Iter_1.png) ![](Images/Part_3/Mona_Iter_2.png) ![](Images/Part_3/Mona_Iter_3.png) ![](Images/Part_3/Mona_Iter_4.png) ![](Images/Part_3/Mona_Iter_5.png) ![](Images/Part_3/Mona_Iter_6.png) ![](Images/Part_3/Mona_Iter_7.png) ![](Images/Part_3/Mona_Iter_8.png) ![](Images/Part_1/Mona.png)
+
+**RMS error vs time over the iterations**
+
+![](Images/Part_3/RMS_mona.png)
