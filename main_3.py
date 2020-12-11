@@ -1,11 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image
-import os
 from tqdm import tqdm
 from sklearn.metrics import mean_squared_error
-import seaborn as sns
-sns.set_palette('hls', 10)
 
 def convert_txt_to_array(path, arr):
 	'''
