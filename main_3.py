@@ -49,7 +49,12 @@ def calc_weight(epsilon, percentage = '0'):
 
 	return W
 
-def main():
+def main(NO_OF_ITERATIONS = 12, percentage = '0'):
+	'''
+	NO_OF_ITERATIONS - total number of iterations
+	percentage - percentage of the weights to be assigned to 0 (percentage can take only 4 values i.e '0', '25', '50', '80')
+	'''
+
 	# path_ball = "/content/drive/MyDrive/Computational Neuroscience/ball.txt"
 	path_ball = input("Enter the path of the text file of the ball image: ")
 	# path_cat = "/content/drive/MyDrive/Computational Neuroscience/cat.txt"
@@ -64,17 +69,17 @@ def main():
 
 	N = ball_arr.shape[0]*ball_arr.shape[1] # No. of neurons
 	P = 3 #Total number of patterns to be learnt
-	NO_OF_ITERATIONS = 12
+	NO_OF_ITERATIONS = NO_OF_ITERATIONS
 	epsilon = np.asarray([ball_arr, cat_arr, mona_arr])
 	random_pattern = np.random.randint(P)
-	arr = epsilon[random_pattern]
+	arr = epsilon[random_pattern] #ground truth output
 	mask_image = np.zeros((90, 100))
 	mask_image[:45, 20:65] = arr[:45, 20:65]
-	test_array = mask_image
+	test_array = mask_image #input patch
 	test_array = test_array.reshape(1, N)
 	epsilon = epsilon.reshape(P, N)
 
-	W = calc_weight(epsilon, percentage = '0')
+	W = calc_weight(epsilon, percentage = percentage)
 	h = np.zeros((N))
 	rms = np.zeros((NO_OF_ITERATIONS))
 	img = []
@@ -87,7 +92,7 @@ def main():
 			for j in range(N):
 				h[i] += W[i, j]*test_array[0, j]
 		test_array = (np.where(h<0, -1, 1)).reshape(1, N)
-		rms[iteration] = mean_squared_error(test_array, mona_arr.reshape(1, N), squared=False)
+		rms[iteration] = mean_squared_error(test_array, arr.reshape(1, N), squared=False)
 		img.append(test_array.reshape(90, 100))
 		plt.imshow(np.where(test_array.reshape(90, 100)<0, -1, 1), cmap="gray")
 		plt.show()
@@ -98,3 +103,5 @@ def main():
 	plt.ylabel('RMS error')
 	plt.show()
 
+#percentage - percentage of the weights to be assigned to 0 (percentage can take only 4 values i.e '0', '25', '50', '80')
+main(NO_OF_ITERATIONS = 12, percentage = '0')
