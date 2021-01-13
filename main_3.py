@@ -65,7 +65,7 @@ def main(NO_OF_ITERATIONS = 12, percentage = '0'):
 
 	N = ball_arr.shape[0]*ball_arr.shape[1] # No. of neurons
 	P = 3 #Total number of patterns to be learnt
-	NO_OF_ITERATIONS = NO_OF_ITERATIONS
+	#NO_OF_ITERATIONS = NO_OF_ITERATIONS
 	epsilon = np.asarray([ball_arr, cat_arr, mona_arr])
 	random_pattern = np.random.randint(P)
 	arr = epsilon[random_pattern] #ground truth output
